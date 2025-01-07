@@ -2,8 +2,9 @@ import pandas as pd
 import os
 
 # Define file path
-directory = "C:\\Users\\Developer\\MyProjects\\ROP_Pre-Plus_LightSpec"
-input_file = os.path.join(directory, "unique_posterior.csv")
+directory = r"C:\Users\Developer\MyProjects\ROP_Pre-Plus_LightSpec\xlsx_generated"
+# input_file = os.path.join(directory, "unique_posterior_with_id.csv")
+input_file = os.path.join(directory, "unique_posterior_with_id.csv")
 
 # Read the CSV file
 data = pd.read_csv(input_file)
@@ -21,6 +22,15 @@ quality_counts = data['Golden Reading Image Set Quality'].value_counts()
 # Print the counts for 'Golden Reading Image Set Quality'
 print("Counts for 'Golden Reading Image Set Quality':")
 print(quality_counts)
+
+
+# Count occurrences of each value in the 'Golden Reading Image Set Quality' column
+subjectID_data = data[data['subjectID'].notna() & data['subjectID'].astype(str).str.strip().ne("")]
+Subjects_counts = subjectID_data['subjectID'].drop_duplicates()
+
+# Print the counts for 'Golden Reading Image Set Quality'
+print("#############Subjects_counts':")
+print(Subjects_counts.count())
 
 # Filter rows where 'Golden Reading Image Set Quality' is 'Acceptable for diagnosis'
 acceptable_data = data[data['Golden Reading Image Set Quality'] == 'Acceptable for diagnosis']
