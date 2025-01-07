@@ -4,14 +4,14 @@ import numpy as np
 
 # Define the directories for the Red, Green, and Blue channels
 # FolderDir = "stage3"
-base_dir = r"C:\Users\Developer\MyProjects\DR_Fundus_Study\Dataset\RawImages"
+base_dir = r"C:\Users\Developer\MyProjects\ROP_Pre-Plus_LightSpec\Dataset\All_Data\RGB_OutputFinal\RawImages"
 # base_dir = os.path.join(base_dir, FolderDir)
 
 red_dir = os.path.join(base_dir, "Red_OutputFinal")
 green_dir = os.path.join(base_dir, "Green_OutputFinal")
 blue_dir = os.path.join(base_dir, "Blue_OutputFinal")
 
-imageFormat = '.tif'
+imageFormat = '.png'
 # Directory to save the final RGB images
 output_dir = os.path.join(base_dir, "RGB_OutputFinal")
 os.makedirs(output_dir, exist_ok=True)
