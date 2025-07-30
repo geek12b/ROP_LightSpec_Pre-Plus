@@ -4,7 +4,7 @@ import os
 # Define file path
 directory = r"C:\Users\Developer\MyProjects\ROP_Pre-Plus_LightSpec\xlsx_generated"
 # input_file = os.path.join(directory, "unique_posterior_with_id.csv")
-input_file = os.path.join(directory, "unique_posterior_with_id.csv")
+input_file = os.path.join(directory, "unique_posterior_eye_3_Accept_Image_Exist_Images.csv")
 
 # Read the CSV file
 data = pd.read_csv(input_file)
